@@ -1,0 +1,6 @@
+ |      Ho va ten |        He |Tin chi LT |Tin chi TH |   Tong TC |        Hoc phi
+ |          Van A |        CQ |        20 |        25 |       115 |       23000000
+
+
+ |      Ho va ten |        He |    Hoc ki |        Hoc phi
+ |        Phung F |       CLC |         3 |       24200000
