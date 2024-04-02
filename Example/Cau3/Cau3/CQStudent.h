@@ -1,7 +1,7 @@
 #pragma once
 #include "Student.h"
 
-class CQStudent : public Student
+class CQStudent : public Student //Extend Student
 {
 private:
 	unsigned int TCLT;

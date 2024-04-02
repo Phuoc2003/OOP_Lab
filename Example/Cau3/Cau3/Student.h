@@ -10,12 +10,18 @@ extern const int intWidth;
 extern const int feeWidth;
 extern const string sep;
 
-class Student
+class Student //Base class
 {
 protected:
+	unsigned int ID;
 	string name;
 	string he;
 	unsigned int fee;
+	double GPA; 
+	string rank;
+	bool sex; //0: Nu, 1: Nam
+	string tel;
+
 public:
 	Student();
 	
@@ -30,7 +36,10 @@ public:
 	virtual void output(ostream& os) const;
 	virtual unsigned int calcFee() = 0;
 
-	friend istream& operator >> (istream& is, Student& student);
+	friend istream& operator >> (istream& is, Student& student); // Nap chong toan tu
 	friend const ostream& operator << (ostream& os, Student& student);
-};
+	//Doi tu 10 -> 4 GPA
+	//Nhap GPA
+	//Xep loai sv
 
+};

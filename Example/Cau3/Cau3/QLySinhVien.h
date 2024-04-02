@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <fstream>
 
-class QLySinhVien
+class QLySinhVien //Quan ly sinh vien
 {
 private:
 	vector<Student*> studentsList;

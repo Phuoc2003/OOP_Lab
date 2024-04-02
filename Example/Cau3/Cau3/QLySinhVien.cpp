@@ -80,7 +80,7 @@ void QLySinhVien::deleteStudent() {
 }
 
 void QLySinhVien::sortFee() {
-	sort(studentsList.begin(), studentsList.end(), compareFee);
+	sort(studentsList.begin(), studentsList.end(), compareFee); //Thu vien Algorithm
 	cout << "Da sap xep xong.\n";
 	system("pause");
 }

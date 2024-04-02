@@ -2,10 +2,10 @@
 #include "Student.h"
 #include <cmath>
 
-class CLCStudent : public Student
+class CLCStudent : public Student //Extend Student
 {
 private:
-	unsigned int HK;
+	unsigned int HK; // Hoc ki
 public:
 	CLCStudent();
 
