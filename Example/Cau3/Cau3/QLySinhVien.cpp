@@ -23,16 +23,18 @@ void QLySinhVien::inputList() {
 }
 
 void QLySinhVien::outputList() {
-	cout << sep << setw(nameWidth) << "Ho va ten" << sep << setw(intWidth) << "He"
-		<< sep << setw(intWidth) << "Tin chi LT" << sep << setw(intWidth) << "Tin chi TH" << sep << setw(intWidth) << "Tong TC"
-		<< sep << setw(feeWidth) << "Hoc phi" << "\n";
+	cout << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
+		<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
+		<< sep << setw(intWidth) << "Tin chi LT" << sep << setw(intWidth) << "Tin chi TH" << sep << setw(8) << "Tong TC"
+		<< sep << setw(intWidth) << "Hoc phi" << "\n";
 	for (Student* s : studentsList) {
 		if (s->getHe() == "CQ")
 			cout << *s;
 	}
 	cout << "\n\n";
-	cout << sep << setw(nameWidth) << "Ho va ten" << sep << setw(intWidth) << "He"
-		<< sep << setw(intWidth) << "Hoc ki" << sep << setw(feeWidth) << "Hoc phi" << "\n";
+	cout << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
+		<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
+		<< sep << setw(intWidth) << "Hoc ki" << sep << setw(intWidth) << "Hoc phi" << "\n";
 	for (Student* s : studentsList) {
 		if (s->getHe() == "CLC")
 			cout << *s;
@@ -98,7 +100,7 @@ void QLySinhVien::listFee() {
 	cout << "Cac sinh vien co hoc phi lon hon hoc phi trung binh\n";
 	cout << sep << setw(nameWidth) << "Ho va ten" << sep << setw(intWidth) << "He"
 		<< sep << setw(intWidth) << "Tin chi LT" << sep << setw(intWidth) << "Tin chi TH" << sep << setw(intWidth) << "Tong TC"
-		<< sep << setw(feeWidth) << "Hoc phi" << "\n";
+		<< sep << setw(intWidth) << "Hoc phi" << "\n";
 	for (Student* s : studentsList) {
 		if (s->getHe() == "CQ" && (s->getFee()) > avg)
 			cout << *s;
@@ -107,7 +109,7 @@ void QLySinhVien::listFee() {
 	cout << "\n\n";
 
 	cout << sep << setw(nameWidth) << "Ho va ten" << sep << setw(intWidth) << "He"
-		<< sep << setw(intWidth) << "Hoc ki" << sep << setw(feeWidth) << "Hoc phi" << "\n";
+		<< sep << setw(intWidth) << "Hoc ki" << sep << setw(intWidth) << "Hoc phi" << "\n";
 	for (Student* s : studentsList) {
 		if (s->getHe() == "CLC" && s->getFee() > avg)
 			cout << *s;
@@ -125,9 +127,10 @@ void QLySinhVien::writeToFile() {
 		return;
 	}
 	else {
-		file << sep << setw(nameWidth) << "Ho va ten" << sep << setw(intWidth) << "He"
-			<< sep << setw(intWidth) << "Tin chi LT" << sep << setw(intWidth) << "Tin chi TH" << sep << setw(intWidth) << "Tong TC"
-			<< sep << setw(feeWidth) << "Hoc phi" << "\n";
+		file << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
+			<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
+			<< sep << setw(intWidth) << "Tin chi LT" << sep << setw(intWidth) << "Tin chi TH" << sep << setw(8) << "Tong TC"
+			<< sep << setw(intWidth) << "Hoc phi" << "\n";
 		for (Student* s : studentsList) {
 			if (s->getHe() == "CQ")
 				file << *s;
@@ -135,8 +138,9 @@ void QLySinhVien::writeToFile() {
 
 		file << "\n\n";
 
-		file << sep << setw(nameWidth) << "Ho va ten" << sep << setw(intWidth) << "He"
-			<< sep << setw(intWidth) << "Hoc ki" << sep << setw(feeWidth) << "Hoc phi" << "\n";
+		file << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
+			<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
+			<< sep << setw(intWidth) << "Hoc ki" << sep << setw(intWidth) << "Hoc phi" << "\n";
 		for (Student* s : studentsList) {
 			if (s->getHe() == "CLC")
 				file << *s;

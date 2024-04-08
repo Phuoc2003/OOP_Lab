@@ -27,7 +27,7 @@ void CLCStudent::input(istream& is) {
 
 void CLCStudent::output(ostream& os) const {
 	Student::output(os);
-	os << sep << setw(intWidth) << HK << sep << setw(feeWidth) << fee << "\n";
+	os << sep << setw(intWidth) << HK << sep << setw(intWidth) << fee << "\n";
 }
 
 unsigned int CLCStudent::calcFee() {

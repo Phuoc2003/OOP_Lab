@@ -2,13 +2,21 @@
 
 const int nameWidth = 15;
 const int intWidth = 10;
-const int feeWidth = 15;
+//const int feeWidth = 15;
 const string sep = " |";
 
 Student::Student() {
+	this->ID = "";
 	this->name = "";
 	this->he = "";
 	this->fee = 0;
+	this->sex = "";
+	this->gpa = 0;
+	this->tel = "";
+}
+
+void Student::setId(string ID) {
+	this->ID = ID;
 }
 
 void Student::setName(string name) {
@@ -17,6 +25,34 @@ void Student::setName(string name) {
 
 void Student::setHe(string he) {
 	this->he = he;
+}
+
+void Student::setSex(string sex) {
+	this->sex = sex;
+}
+
+void Student::setGpa(double gpa) {
+	this->gpa = gpa;
+}
+
+void Student::setTel(string tel) {
+	this->tel = tel;
+}
+
+void Student::setRank(string rank) {
+	this->rank = rank;
+	if (gpa >= 8.5) rank = "A";
+	else if (gpa >= 8.0) rank = "B+";
+	else if (gpa >= 7.0) rank = "B";
+	else if (gpa >= 6.5) rank = "C+";
+	else if (gpa >= 5.5) rank = "C";
+	else if (gpa >= 5.0) rank = "D+";
+	else if (gpa >= 4.0) rank = "D";
+	else rank = "F";
+}
+
+string Student::getId() const {
+	return this->ID;
 }
 
 string Student::getName() const {
@@ -30,14 +66,39 @@ unsigned int Student::getFee() const {
 	return this->fee;
 }
 
+string Student::getSex() const {
+	return this->sex;
+}
+
+double Student::getGpa() const {
+	return this->gpa;
+}
+
+string Student::getTel() const {
+	return this->tel;
+}
+
+string Student::getRank() const{
+	return this->rank;
+}
+
 void Student::input(istream& is) {
+	do {
+		cout << "Nhap ma so sinh vien (2 ky tu): "; cin >> ID;
+	} while (ID.size() != 2);
 	cout << "Nhap ho va ten: ";
 	is.ignore();
 	getline(is, name);
+	do {
+		cout << "Nhap gioi tinh (Nam/Nu): "; cin >> sex;
+	} while (!(sex == "Nam" || sex == "Nu"));
+	cout << "Nhap GPA (theo he 10): "; cin >> gpa;
+	cout << "Nhap so dien thoai: "; cin >> tel;
 }
 
 void Student::output(ostream& os) const {
-	os << sep << setw(nameWidth) << name << sep << setw(intWidth) << he;
+	os << sep << setw(3) << ID << sep << setw(nameWidth) << name << sep << setw(5) << he << sep << setw(intWidth) << sex
+		<< sep << fixed << setprecision(1) << setw(4) << gpa << sep << setw(intWidth) << rank << sep << setw(12) << tel;
 }
 
 istream& operator >> (istream& is, Student& student) {

@@ -1,8 +1,2 @@
-﻿  CLCStudent.cpp
-D:\3rd Year-2nd Sem\OOP\SourceCode\Review\Cau3\Cau3\CLCStudent.cpp(35,25): warning C4244: '=': conversion from 'double' to 'unsigned int', possible loss of data
-  CQStudent.cpp
-  main.cpp
-  QLySinhVien.cpp
-  Student.cpp
-  Generating Code...
-  Cau3.vcxproj -> D:\3rd Year-2nd Sem\OOP\SourceCode\Review\Cau3\x64\Debug\Cau3.exe
+﻿  Student.cpp
+  Cau3.vcxproj -> C:\Users\PC\OneDrive - VNU-HCMUS\Desktop\NĂM 3\OOP_Lab\Example\Cau3\x64\Debug\Cau3.exe

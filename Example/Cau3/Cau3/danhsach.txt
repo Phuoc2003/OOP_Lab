@@ -1,6 +1,6 @@
- |      Ho va ten |        He |Tin chi LT |Tin chi TH |   Tong TC |        Hoc phi
- |          Van A |        CQ |        20 |        25 |       115 |       23000000
+ | ID |      Ho va ten |   He | Gioi tinh | GPA |  Xep loai |         SDT |Tin chi LT |Tin chi TH | Tong TC |   Hoc phi
+ | 23 |  Le Minh Thanh |   CQ |        Nu | 6.7 |           |  0982288373 |        67 |        34 |     236 |  47200000
 
 
- |      Ho va ten |        He |    Hoc ki |        Hoc phi
- |        Phung F |       CLC |         3 |       24200000
+ | ID |      Ho va ten |   He | Gioi tinh | GPA |  Xep loai |         SDT |    Hoc ki |   Hoc phi
+ | 11 | Tran Tuan Kiet |  CLC |       Nam | 8.3 |           |  0972277464 |         4 |  26620000

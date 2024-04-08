@@ -7,30 +7,39 @@ using namespace std;
 
 extern const int nameWidth;
 extern const int intWidth;
-extern const int feeWidth;
+//extern const int feeWidth;
 extern const string sep;
 
 class Student //Base class
 {
 protected:
-	unsigned int ID;
+	string ID;
 	string name;
 	string he;
 	unsigned int fee;
-	double GPA; 
+	double gpa; 
 	string rank;
-	bool sex; //0: Nu, 1: Nam
+	string sex;
 	string tel;
 
 public:
 	Student();
-	
+	void setId(string ID);
 	void setName(string name);
 	void setHe(string he);
+	void setSex(string sex);
+	void setGpa(double gpa);
+	void setTel(string tel);
+	void setRank(string rank);
 
+	string getId() const;
 	string getName() const;
 	string getHe() const;
 	unsigned int getFee() const;
+	string getSex() const;
+	double getGpa() const;
+	string getTel() const;
+	string getRank() const;
 
 	virtual void input(istream& is);
 	virtual void output(ostream& os) const;

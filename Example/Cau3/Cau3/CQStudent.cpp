@@ -44,8 +44,8 @@ void CQStudent::input(istream& is) {
 
 void CQStudent::output(ostream& os) const {
 	Student::output(os);
-	os << sep << setw(intWidth) << TCLT << sep << setw(intWidth) << TCTH << sep << setw(intWidth) << totalCredit 
-		<< sep << setw(feeWidth) << fee << "\n";
+	os << sep << setw(intWidth) << TCLT << sep << setw(intWidth) << TCTH << sep << setw(8) << totalCredit 
+		<< sep << setw(intWidth) << fee << "\n";
 }
 
 unsigned int CQStudent::calcFee() {
