@@ -11,9 +11,10 @@ class QLySinhVien //Quan ly sinh vien
 private:
 	vector<Student*> studentsList;
 	int soLuong;
-	bool hasCQ;
-	bool hasCLC;
+	int soLuongCLC;
+	int soLuongCQ;
 public:
+	QLySinhVien();
 	void input();
 	void inputList();
 	void outputList();

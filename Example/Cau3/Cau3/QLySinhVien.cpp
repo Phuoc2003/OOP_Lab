@@ -1,19 +1,23 @@
 #include "QLySinhVien.h"
 
+QLySinhVien::QLySinhVien() {
+	this->soLuong = 0;
+	this->soLuongCLC = 0;
+	this->soLuongCQ = 0;
+}
+
 void QLySinhVien::input() {
 	Student* student;
-	this->hasCQ = 0;
-	this->hasCLC = 0;
 	int studentType;
 	cout << "Nhap he sinh vien(1 - Sinh vien chat luong cao, 2 - Sinh vien dai tra): ";
 	cin >> studentType;
 	if (studentType == 1) {
 		student = new CLCStudent();
-		this->hasCLC = 1;
+		this->soLuongCLC++;
 	}
 	else {
 		student = new CQStudent();
-		this->hasCQ = 1;
+		this->soLuongCQ++;
 	}
 	cin >> *student;
 	studentsList.push_back(student);
@@ -29,7 +33,7 @@ void QLySinhVien::inputList() {
 }
 
 void QLySinhVien::outputList() {
-	if (hasCQ) {
+	if (soLuongCQ) {
 		cout << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
 			<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
 			<< sep << setw(intWidth) << "So mon LT" << sep << setw(intWidth) << "So mon TH" << sep << setw(8) << "Tong TC"
@@ -42,7 +46,7 @@ void QLySinhVien::outputList() {
 	}
 
 	cout << "\n\n";
-	if (hasCLC) {
+	if (soLuongCLC) {
 		cout << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
 			<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
 			<< sep << setw(intWidth) << "Hoc ki" << sep << setw(intWidth) << "Hoc phi" << "\n";
@@ -86,6 +90,10 @@ void QLySinhVien::deleteStudent() {
 		return;
 	}
 	else {
+		if (studentsList[indexStudent]->getHe() == "CQ")
+			this->soLuongCQ--;
+		if (studentsList[indexStudent]->getHe() == "CLC")
+			this->soLuongCLC--;
 		studentsList.erase(studentsList.begin() + indexStudent);
 		cout << "Da xoa xong sinh vien.\n";
 		system("pause");
@@ -139,23 +147,26 @@ void QLySinhVien::writeToFile() {
 		return;
 	}
 	else {
-		file << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
-			<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
-			<< sep << setw(intWidth) << "So mon LT" << sep << setw(intWidth) << "So mon TH" << sep << setw(8) << "Tong TC"
-			<< sep << setw(intWidth) << "Hoc phi" << "\n";
-		for (Student* s : studentsList) {
-			if (s->getHe() == "CQ")
-				file << *s;
+		if (soLuongCQ) {
+			file << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
+				<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
+				<< sep << setw(intWidth) << "So mon LT" << sep << setw(intWidth) << "So mon TH" << sep << setw(8) << "Tong TC"
+				<< sep << setw(intWidth) << "Hoc phi" << "\n";
+			for (Student* s : studentsList) {
+				if (s->getHe() == "CQ")
+					file << *s;
+			}
 		}
 
 		file << "\n\n";
-
-		file << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
-			<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
-			<< sep << setw(intWidth) << "Hoc ki" << sep << setw(intWidth) << "Hoc phi" << "\n";
-		for (Student* s : studentsList) {
-			if (s->getHe() == "CLC")
-				file << *s;
+		if (soLuongCLC) {
+			file << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
+				<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
+				<< sep << setw(intWidth) << "Hoc ki" << sep << setw(intWidth) << "Hoc phi" << "\n";
+			for (Student* s : studentsList) {
+				if (s->getHe() == "CLC")
+					file << *s;
+			}
 		}
 		file.close();
 		cout << "Da ghi vao file.\n";
