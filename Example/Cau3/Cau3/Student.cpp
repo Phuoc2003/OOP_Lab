@@ -84,16 +84,16 @@ string Student::getRank() const{
 
 void Student::input(istream& is) {
 	do {
-		cout << "Nhap ma so sinh vien (2 ky tu): "; cin >> ID;
+		cout << "Nhap ma so sinh vien (2 ky tu): "; is >> ID;
 	} while (ID.size() != 2);
 	cout << "Nhap ho va ten: ";
 	is.ignore();
 	getline(is, name);
 	do {
-		cout << "Nhap gioi tinh (Nam/Nu): "; cin >> sex;
+		cout << "Nhap gioi tinh (Nam/Nu): "; is >> sex;
 	} while (!(sex == "Nam" || sex == "Nu"));
-	cout << "Nhap GPA (theo he 10): "; cin >> gpa;
-	cout << "Nhap so dien thoai: "; cin >> tel;
+	cout << "Nhap GPA (theo he 10): "; is >> gpa;
+	cout << "Nhap so dien thoai: "; is >> tel;
 }
 
 void Student::output(ostream& os) const {
