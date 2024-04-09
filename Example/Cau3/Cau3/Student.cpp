@@ -39,16 +39,17 @@ void Student::setTel(string tel) {
 	this->tel = tel;
 }
 
-void Student::setRank(string rank) {
-	this->rank = rank;
-	if (gpa >= 8.5) rank = "A";
-	else if (gpa >= 8.0) rank = "B+";
-	else if (gpa >= 7.0) rank = "B";
-	else if (gpa >= 6.5) rank = "C+";
-	else if (gpa >= 5.5) rank = "C";
-	else if (gpa >= 5.0) rank = "D+";
-	else if (gpa >= 4.0) rank = "D";
+void Student::setRank() {
+	string rank;
+	if (this->gpa >= 8.5) rank = "A";
+	else if (this->gpa >= 8.0) rank = "B+";
+	else if (this->gpa >= 7.0) rank = "B";
+	else if (this->gpa >= 6.5) rank = "C+";
+	else if (this->gpa >= 5.5) rank = "C";
+	else if (this->gpa >= 5.0) rank = "D+";
+	else if (this->gpa >= 4.0) rank = "D";
 	else rank = "F";
+	this->rank = rank;
 }
 
 string Student::getId() const {

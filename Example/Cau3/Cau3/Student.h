@@ -30,7 +30,7 @@ public:
 	void setSex(string sex);
 	void setGpa(double gpa);
 	void setTel(string tel);
-	void setRank(string rank);
+	void setRank();
 
 	string getId() const;
 	string getName() const;
