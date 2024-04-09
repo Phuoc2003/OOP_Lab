@@ -4,17 +4,17 @@
 class CQStudent : public Student //Extend Student
 {
 private:
-	unsigned int TCLT;
-	unsigned int TCTH;
+	unsigned int MonLT;
+	unsigned int MonTH;
 	unsigned int totalCredit;
 public:
 	CQStudent();
 
-	void setTCLT(unsigned int TCLT);
-	void setTCTH(unsigned int TCTH);
+	void setMonLT(unsigned int MonLT);
+	void setMonTH(unsigned int MonTH);
 	
-	unsigned int getTCLT() const;
-	unsigned int getTCTH() const;
+	unsigned int getMonLT() const;
+	unsigned int getMonTH() const;
 	unsigned int getTotalCredit() const;
 	
 	void input(istream& is) override;

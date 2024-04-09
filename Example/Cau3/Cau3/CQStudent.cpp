@@ -1,25 +1,25 @@
 #include "CQStudent.h"
 
 CQStudent::CQStudent() : Student() {
-	this->TCLT = 0;
-	this->TCTH = 0;
+	this->MonLT = 0;
+	this->MonTH = 0;
 	this->totalCredit = 0;
 }
 
-void CQStudent::setTCLT(unsigned int TCLT) {
-	this->TCLT = TCLT;
+void CQStudent::setMonLT(unsigned int MonLT) {
+	this->MonLT = MonLT;
 }
 
-void CQStudent::setTCTH(unsigned int TCTH) {
-	this->TCTH = TCTH;
+void CQStudent::setMonTH(unsigned int MonTH) {
+	this->MonTH = MonTH;
 }
 
-unsigned int CQStudent::getTCLT() const {
-	return this->TCLT;
+unsigned int CQStudent::getMonLT() const {
+	return this->MonLT;
 }
 
-unsigned int CQStudent::getTCTH() const {
-	return this->TCTH;
+unsigned int CQStudent::getMonTH() const {
+	return this->MonTH;
 }
 
 unsigned int CQStudent::getTotalCredit() const {
@@ -29,22 +29,22 @@ unsigned int CQStudent::getTotalCredit() const {
 void CQStudent::input(istream& is) {
 	Student::input(is);
 
-	cout << "Nhap vao so tin chi LT: ";
-	is >> TCLT;
+	cout << "Nhap vao so mon LT: ";
+	is >> MonLT;
 	is.ignore();
 
-	cout << "Nhap vao so tin chi TH: ";
-	is >> TCTH;
+	cout << "Nhap vao so mon TH: ";
+	is >> MonTH;
 	is.ignore();
 
-	totalCredit = (this->TCLT * 2) + (this->TCTH * 3);
+	totalCredit = (this->MonLT * 2) + (this->MonTH * 3);
 	he = "CQ";
 	fee = calcFee();
 }
 
 void CQStudent::output(ostream& os) const {
 	Student::output(os);
-	os << sep << setw(intWidth) << TCLT << sep << setw(intWidth) << TCTH << sep << setw(8) << totalCredit 
+	os << sep << setw(intWidth) << MonLT << sep << setw(intWidth) << MonTH << sep << setw(8) << totalCredit 
 		<< sep << setw(intWidth) << fee << "\n";
 }
 

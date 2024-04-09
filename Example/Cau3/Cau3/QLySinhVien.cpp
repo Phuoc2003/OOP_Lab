@@ -25,7 +25,7 @@ void QLySinhVien::inputList() {
 void QLySinhVien::outputList() {
 	cout << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
 		<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
-		<< sep << setw(intWidth) << "Tin chi LT" << sep << setw(intWidth) << "Tin chi TH" << sep << setw(8) << "Tong TC"
+		<< sep << setw(intWidth) << "So mon LT" << sep << setw(intWidth) << "So mon TH" << sep << setw(8) << "Tong TC"
 		<< sep << setw(intWidth) << "Hoc phi" << "\n";
 	for (Student* s : studentsList) {
 		if (s->getHe() == "CQ")
@@ -99,7 +99,7 @@ void QLySinhVien::listFee() {
 	cout << "Hoc phi trung binh: " << avg << "\n";
 	cout << "Cac sinh vien co hoc phi lon hon hoc phi trung binh\n";
 	cout << sep << setw(nameWidth) << "Ho va ten" << sep << setw(intWidth) << "He"
-		<< sep << setw(intWidth) << "Tin chi LT" << sep << setw(intWidth) << "Tin chi TH" << sep << setw(intWidth) << "Tong TC"
+		<< sep << setw(intWidth) << "So mon LT" << sep << setw(intWidth) << "So mon TH" << sep << setw(intWidth) << "Tong TC"
 		<< sep << setw(intWidth) << "Hoc phi" << "\n";
 	for (Student* s : studentsList) {
 		if (s->getHe() == "CQ" && (s->getFee()) > avg)
@@ -129,7 +129,7 @@ void QLySinhVien::writeToFile() {
 	else {
 		file << sep << setw(3) << "ID" << sep << setw(nameWidth) << "Ho va ten" << sep << setw(5) << "He" << sep << setw(intWidth) << "Gioi tinh"
 			<< sep << setw(4) << "GPA" << sep << setw(intWidth) << "Xep loai" << sep << setw(12) << "SDT"
-			<< sep << setw(intWidth) << "Tin chi LT" << sep << setw(intWidth) << "Tin chi TH" << sep << setw(8) << "Tong TC"
+			<< sep << setw(intWidth) << "So mon LT" << sep << setw(intWidth) << "So mon TH" << sep << setw(8) << "Tong TC"
 			<< sep << setw(intWidth) << "Hoc phi" << "\n";
 		for (Student* s : studentsList) {
 			if (s->getHe() == "CQ")
