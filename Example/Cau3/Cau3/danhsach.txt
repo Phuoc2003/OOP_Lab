@@ -1,6 +1,12 @@
  | ID |      Ho va ten |   He | Gioi tinh | GPA |  Xep loai |         SDT |Tin chi LT |Tin chi TH | Tong TC |   Hoc phi
- | 23 |  Le Minh Thanh |   CQ |        Nu | 6.7 |           |  0982288373 |        67 |        34 |     236 |  47200000
+ | 05 | Mai Thi Cam Ly |   CQ |        Nu | 5.8 |         C |           5 |        56 |        35 |     217 |  43400000
+ | 06 |     Vo Thi Len |   CQ |        Nu | 5.3 |        D+ |           6 |        87 |        45 |     309 |  61800000
+ | 07 |      Cristiano |   CQ |        Nu | 4.3 |         D |           7 |        77 |         7 |     175 |  35000000
+ | 08 |   Lionel Messi |   CQ |       Nam | 2.0 |         F |          10 |       100 |        30 |     290 |  58000000
 
 
  | ID |      Ho va ten |   He | Gioi tinh | GPA |  Xep loai |         SDT |    Hoc ki |   Hoc phi
- | 11 | Tran Tuan Kiet |  CLC |       Nam | 8.3 |           |  0972277464 |         4 |  26620000
+ | 01 | Tran Tuan Kiet |  CLC |       Nam | 8.9 |         A |           1 |         4 |  26620000
+ | 02 |  Le Minh Thanh |  CLC |       Nam | 8.2 |        B+ |           2 |         4 |  26620000
+ | 03 |Le Doan Phu Sang |  CLC |       Nam | 7.5 |         B |           3 |         5 |  29282000
+ | 04 | Phan Huu Phuoc |  CLC |       Nam | 6.8 |        C+ |           4 |         3 |  24200000

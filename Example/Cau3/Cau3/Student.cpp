@@ -13,6 +13,7 @@ Student::Student() {
 	this->sex = "";
 	this->gpa = 0;
 	this->tel = "";
+	this->rank = "";
 }
 
 void Student::setId(string ID) {
@@ -33,6 +34,7 @@ void Student::setSex(string sex) {
 
 void Student::setGpa(double gpa) {
 	this->gpa = gpa;
+	setRank();
 }
 
 void Student::setTel(string tel) {
@@ -93,8 +95,11 @@ void Student::input(istream& is) {
 	do {
 		cout << "Nhap gioi tinh (Nam/Nu): "; is >> sex;
 	} while (!(sex == "Nam" || sex == "Nu"));
-	cout << "Nhap GPA (theo he 10): "; is >> gpa;
+	do {
+		cout << "Nhap GPA (theo he 10): "; is >> gpa;
+	} while (!(gpa >= 0 && gpa <= 10));
 	cout << "Nhap so dien thoai: "; is >> tel;
+	this->setRank();
 }
 
 void Student::output(ostream& os) const {
