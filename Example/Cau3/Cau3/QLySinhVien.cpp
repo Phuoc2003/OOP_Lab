@@ -94,6 +94,7 @@ void QLySinhVien::deleteStudent() {
 			this->soLuongCQ--;
 		if (studentsList[indexStudent]->getHe() == "CLC")
 			this->soLuongCLC--;
+		this->soLuong--;
 		studentsList.erase(studentsList.begin() + indexStudent);
 		cout << "Da xoa xong sinh vien.\n";
 		system("pause");
